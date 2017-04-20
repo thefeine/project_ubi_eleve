@@ -16,7 +16,13 @@
   etudiant_id      			integer,
   matiere 			varchar(30),
   evaluation		integer,
-  constraint NOTES_PK primary key (etudiant_id, matiere, evaluation)
+  constraint NOTES_PK primary key (etudiant_id, matiere, evaluation),
+  constraint NOTES_FK foreign key (etudiant_id) references etudiants(id)
  );
 
-
+INSERT INTO etudiants VALUES (1, 'THOMAS', 'Engigol', '2005-04-12');
+INSERT INTO etudiants VALUES (2, 'ROSALIE', 'Yolande', '2013-12-01');
+INSERT INTO etudiants VALUES (3, 'LORRAINE', 'Josephine', '2007-04-10');
+INSERT INTO notes VALUES (1, 'Francais', 15);
+INSERT INTO notes VALUES (3, 'Anglais', 12);
+INSERT INTO notes VALUES (1, 'Espagnol', 17);
